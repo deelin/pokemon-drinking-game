@@ -2,14 +2,6 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-class Lobby(models.Model):
-    hash = models.CharField(max_length=100, unique=True, null=True)
-
-    def save(self, *args, **kwargs):
-        self.hash = str(uuid.uuid4())
-        super().save(*args, **kwargs)
-
-
 class Board(models.Model):
     name = models.CharField(max_length=100)
 
@@ -21,6 +13,14 @@ class Tile(models.Model):
     image = models.ImageField()
     message = models.TextField()
     action = models.CharField(max_length=100)
+
+
+class Lobby(models.Model):
+    hash = models.CharField(max_length=100, unique=True, null=True)
+
+    def save(self, *args, **kwargs):
+        self.hash = str(uuid.uuid4())
+        super().save(*args, **kwargs)
 
 
 class Player(models.Model):

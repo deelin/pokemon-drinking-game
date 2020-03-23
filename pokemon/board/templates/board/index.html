@@ -1,1 +1,15 @@
-hello
+{% load static %}
+
+<html>
+    <head>
+        <title>Pokemon Drinking Game</title>
+    </head>
+    <body>
+        <ul>
+            <li>Name: {% player.name %}</li>
+            <li>Color: {% player.color %}</li>
+        </ul>
+
+        <img src="{% static "board/board.png" %}" />
+    </body>
+</html>

@@ -6,4 +6,4 @@ from board import urls as board_urls
 urlpatterns = [
     path('', include(board_urls)),
     path('admin/', admin.site.urls),
-]
+] 
